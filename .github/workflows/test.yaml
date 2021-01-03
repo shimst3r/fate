@@ -16,12 +16,12 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install black flake8 mypy pytest
+          pip install black flake8 mypy pytest pytest-subtests
       - name: Check code formatting with black
-        run: python -m black --check pytenki/
+        run: python -m black --check fate/
       - name: Lint code with flake8
-        run: python -m flake8 pytenki/
+        run: python -m flake8 fate/
       - name: Lint code with mypy
-        run: python -m mypy pytenki/
+        run: python -m mypy fate/
       - name: Run test suite with pytest
         run: python -m pytest tests/
